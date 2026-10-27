@@ -1,0 +1,17 @@
+{
+  "dataset": "SiC-PCSS Cross-Device RUL Benchmark",
+  "version": "1.0.0",
+  "status": "pass",
+  "records": 7,
+  "events": 69355,
+  "waveform_backed_events": 67022,
+  "checks": {
+    "contiguous_one_based_event_index": true,
+    "rul_decreases_to_zero": true,
+    "life_fraction_spans_zero_to_one": true,
+    "finite_peak_voltage": true,
+    "continuous_publication_ids_SW1_to_SW7": true,
+    "discarded_legacy_SW1_SW4_absent": true,
+    "source_identity_retained": true
+  }
+}

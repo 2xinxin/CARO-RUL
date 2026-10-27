@@ -1,0 +1,8 @@
+source_record_id,record_id
+SW2,SW1
+SW3,SW2
+SW5,SW3
+SW6,SW4
+SW7,SW5
+EXP-20231108,SW6
+EXP-20241205,SW7

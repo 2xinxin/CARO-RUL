@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "unit_of_independence": "physical_device_record",
+  "primary_protocol": "leave-one-device-out",
+  "records": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "test_checkpoints": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "leakage_guards": [
+    "split by physical device before window construction",
+    "fit imputation, scaling, feature selection, and early stopping on source devices only",
+    "never use held-out target labels or endpoint length during fitting or selection",
+    "preserve acquisition order and segment boundaries"
+  ]
+}

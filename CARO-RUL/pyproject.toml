@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caro-rul"
+version = "1.0.0"
+description = "Cross-device remaining useful life prediction for SiC-PCSS devices"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Xin Yang"},
+  {name = "Yutian Wang"},
+  {name = "Hui Guo"},
+]
+dependencies = [
+  "numpy>=1.23,<3",
+  "pandas>=1.5,<3",
+  "scipy>=1.9,<2",
+  "scikit-learn>=1.2,<2",
+  "torch>=2.0",
+  "PyYAML>=6",
+  "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100

@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the CARO-RUL manuscript."
+title: "CARO-RUL: Risk-Aware Cross-Device Prognostics of SiC-PCSSs"
+type: software
+version: 1.0.0
+date-released: 2026-10-27
+authors:
+  - family-names: Yang
+    given-names: Xin
+  - family-names: Wang
+    given-names: Yutian
+  - family-names: Guo
+    given-names: Hui
+license: MIT

@@ -1,0 +1,23 @@
+{
+  "name": "SiC-PCSS Cross-Device RUL Benchmark",
+  "version": "1.0.0",
+  "created": "2026-09-17",
+  "primary_task": "remaining useful life prediction",
+  "target": "rul_observed_events",
+  "device_family": "SiC-PCSS",
+  "record_ids": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "canonical_directory": "processed/event_sequences",
+  "records": "records.csv",
+  "id_mapping": "id_mapping.csv",
+  "split_policy": "splits/policy.json",
+  "validation": "audit/validation_report.json",
+  "license": "Dataset reuse license not specified; see docs/DATA_ACCESS.md"
+}

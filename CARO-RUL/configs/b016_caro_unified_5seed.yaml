@@ -1,0 +1,49 @@
+schema_version: 1
+run_id: B016_CARO_UNIFIED_5SEED
+dataset:
+  root: dataset
+  records: [SW1, SW2, SW3, SW4, SW5, SW6, SW7]
+  feature_columns: [peak_voltage_v, voltage_min_v, voltage_peak_to_peak_v,
+                    voltage_mean_v, voltage_std_v, voltage_rms_v,
+                    baseline_mean_v, baseline_std_v,
+                    baseline_corrected_peak_v, baseline_corrected_trough_v,
+                    peak_time_s, rise_time_10_90_s, fwhm_s,
+                    positive_pulse_area_v_s]
+protocol:
+  split: leave_one_device_out_before_windowing
+  target: rul_observed_events
+  window: 128
+  train_fraction: [0.05, 0.75]
+  validation_fraction: [0.76, 0.88]
+  train_samples_per_source: 128
+  validation_samples_per_source: 32
+  test_checkpoints: [0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80]
+  fixed_event_indices: [256, 512, 768, 1024, 1280, 1536]
+  preprocessing_fit_max_fraction: 0.75
+  input_channels: values_plus_first_differences_plus_missing_masks_plus_causal_age
+  primary_metric: device_macro_nmae
+  secondary_metrics: [device_macro_nrmse, device_macro_r2,
+                      normalized_bias, overestimation_rate]
+training:
+  screening_seeds: [17, 29, 41, 53, 67]
+  confirmation_seeds: [17, 29, 41, 53, 67]
+  epochs: 20
+  patience: 5
+  batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  hidden_size: 24
+  hazard_bins: 48
+  gradient_clip: 1.0
+models:
+  classical: []
+  standard_neural: [mlp, cnn, rnn, gru, lstm, bilstm, tcn]
+  domain_generalization: [deep_coral_tcn, groupdro_tcn]
+  modern: [dlinear_faithful, transformer, sa_mcd, informer_faithful,
+           nbeats_faithful, patchtst_faithful, timesnet_faithful,
+           pathformer_adapted, sa_mcd_adapted]
+  proposed: [cdap_point, tcn_iorh, caro_rul]
+runtime:
+  device: auto
+  resume: true
+  output: results/PCSS_RICH_BENCHMARK/B016_CARO_UNIFIED_5SEED
