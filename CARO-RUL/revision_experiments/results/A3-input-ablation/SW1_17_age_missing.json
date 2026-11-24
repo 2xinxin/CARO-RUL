@@ -1,0 +1,172 @@
+{
+  "metrics": [
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "parameters": 14117,
+      "epochs": 6,
+      "validation_mae": 0.051372711857159935,
+      "nmae": 0.1978341208409323,
+      "nrmse": 0.2384229425833873,
+      "mae": 916.1698136143574,
+      "rmse": 1104.1366471036667,
+      "nbias": -0.11612430671486387,
+      "overestimation_rate": 0.2857142857142857,
+      "r2": -0.4217514373315723
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "parameters": 14117,
+      "epochs": 6,
+      "validation_mae": 0.051372711857159935,
+      "nmae": 0.44149970812323797,
+      "nrmse": 0.45395189628083543,
+      "mae": 2044.585148318715,
+      "rmse": 2102.251231676549,
+      "nbias": -0.44149970812323797,
+      "overestimation_rate": 0.0,
+      "r2": -22.12078111617031
+    }
+  ],
+  "predictions": [
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 926,
+      "true_rul": 3705.0,
+      "predicted_rul": 1707.4029524106584,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 1389,
+      "true_rul": 3242.0,
+      "predicted_rul": 1742.6937621221186,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 1852,
+      "true_rul": 2779.0,
+      "predicted_rul": 1767.4864806587598,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 2315,
+      "true_rul": 2316.0,
+      "predicted_rul": 1786.5656196442847,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 2778,
+      "true_rul": 1853.0,
+      "predicted_rul": 1802.0560121260557,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 3241,
+      "true_rul": 1390.0,
+      "predicted_rul": 1815.0826165240087,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fractional_life",
+      "index": 3704,
+      "true_rul": 927.0,
+      "predicted_rul": 1826.3109057383713,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 256,
+      "true_rul": 4375.0,
+      "predicted_rul": 1593.155257757414,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 512,
+      "true_rul": 4119.0,
+      "predicted_rul": 1655.150781434937,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 768,
+      "true_rul": 3863.0,
+      "predicted_rul": 1690.9901930026022,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 1024,
+      "true_rul": 3607.0,
+      "predicted_rul": 1716.194180313753,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 1280,
+      "true_rul": 3351.0,
+      "predicted_rul": 1735.6120767030834,
+      "lifetime": 4631
+    },
+    {
+      "target": "SW1",
+      "seed": 17,
+      "mode": "age_missing",
+      "evaluation": "fixed_event_count",
+      "index": 1536,
+      "true_rul": 3095.0,
+      "predicted_rul": 1751.38662087592,
+      "lifetime": 4631
+    }
+  ],
+  "torch_version": "2.10.0+cpu",
+  "device": "cpu",
+  "threads": 2,
+  "seconds": 1.1039370820000016
+}

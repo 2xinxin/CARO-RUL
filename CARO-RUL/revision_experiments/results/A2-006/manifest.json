@@ -1,0 +1,50 @@
+{
+  "rows_after_baseline_replacement": 1960,
+  "models": [
+    "bilstm",
+    "caro_rul",
+    "cnn",
+    "deep_coral_tcn",
+    "dlinear_faithful",
+    "extra_trees",
+    "gradient_boosting",
+    "groupdro_tcn",
+    "gru",
+    "informer_faithful",
+    "initial_state_ridge",
+    "lstm",
+    "mlp",
+    "nbeats_faithful",
+    "patchtst_faithful",
+    "pathformer_adapted",
+    "population_geomean",
+    "population_median",
+    "random_forest",
+    "ridge",
+    "rnn",
+    "sa_mcd",
+    "sa_mcd_adapted",
+    "svr",
+    "tcn",
+    "timesnet_faithful",
+    "transformer",
+    "wiener"
+  ],
+  "devices": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "seeds": [
+    17,
+    29,
+    41,
+    53,
+    67
+  ],
+  "independent_unit": "physical device; confidence intervals resample seven device-level seed means"
+}

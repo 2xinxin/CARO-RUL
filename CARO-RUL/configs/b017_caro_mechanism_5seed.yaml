@@ -39,6 +39,7 @@ models:
   proposed: [caro_no_recency, caro_no_reliability, caro_no_trend,
              caro_ordered_only]
 runtime:
+  interpreter: C:\Users\Administrator\anaconda3\envs\myenv\python.exe
   device: auto
   resume: true
   output: results/PCSS_RICH_BENCHMARK/B017_CARO_MECHANISM_5SEED

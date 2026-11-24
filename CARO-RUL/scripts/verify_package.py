@@ -56,7 +56,7 @@ def main() -> None:
     manifest = json.loads((ROOT / "models" / "caro_rul_lodo" / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["count"] == 35
     for item in manifest["files"]:
-        payload = torch.load(ROOT / item["path"], map_location="cpu", weights_only=False)
+        payload = torch.load(ROOT / item["path"].replace(chr(92), "/"), map_location="cpu", weights_only=False)
         assert payload["dataset_manifest_sha256"] == sha256(file_manifest_path)
         model = build_model(
             payload["model_name"], payload["input_channels"],

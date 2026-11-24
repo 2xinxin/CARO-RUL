@@ -148,7 +148,7 @@ def main() -> None:
         "id_mapping": "id_mapping.csv",
         "split_policy": "splits/policy.json",
         "validation": "audit/validation_report.json",
-        "license": "Dataset reuse license not specified; see docs/DATA_ACCESS.md",
+        "license": "private; public redistribution not yet cleared",
     }
     (OUTPUT_ROOT / "dataset_manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"

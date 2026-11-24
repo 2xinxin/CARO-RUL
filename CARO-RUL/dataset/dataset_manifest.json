@@ -19,5 +19,5 @@
   "id_mapping": "id_mapping.csv",
   "split_policy": "splits/policy.json",
   "validation": "audit/validation_report.json",
-  "license": "Dataset reuse license not specified; see docs/DATA_ACCESS.md"
+  "license": "private; public redistribution not yet cleared"
 }

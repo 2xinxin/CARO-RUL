@@ -1,0 +1,15 @@
+{
+  "run_id": "A2-004",
+  "status": "complete",
+  "official_sources": {
+    "Time-Series-Library": "4e938a1767106324dd753b2a44832bf870a0252e",
+    "N-BEATS": "c746a4f13ffc957487e0c3279b182c3030836053"
+  },
+  "changes_from_submitted_adapter": [
+    "final scalar projection initialized at the source target median to prevent initial sigmoid saturation",
+    "maximum epochs increased from 20 to 100",
+    "patience increased from 5 to 15",
+    "learning rate selected from 1e-3 and 3e-4 using source-only temporal validation"
+  ],
+  "same_data_contract": "outer LODO, source-only preprocessing, identical windows and test schedules"
+}

@@ -1,12 +1,17 @@
 # SiC-PCSS Cross-Device RUL Benchmark v1.0.0
 
-This repository contains the **processed, feature-level** benchmark corresponding to the CARO-RUL manuscript, with seven physical device records (SW1--SW7). The original full oscilloscope waveforms are not included.
+This directory is the authoritative benchmark used by the CARO-RUL manuscript.
+It contains seven complete run-to-breakdown SiC photoconductive semiconductor
+switch records with continuous publication identifiers `SW1`--`SW7`.
 
-The canonical prediction target is `rul_observed_events = N - event_index`, using the one-based index for a record of length `N`. One row represents a **retained acquisition observation**, not independently verified switching-pulse count. A complete physical device lifetime is the independent evaluation unit.
+The primary task is remaining useful life prediction. At event index (t) in a
+record of length (N), the target is `rul_observed_events = N - t`. One row is
+one acquired switching event, and one complete device record is the independent
+experimental unit.
 
-## Benchmark provenance
+## Record renumbering
 
-| Public ID | Acquisition-era ID | Events | Waveform-backed | Segments |
+| Benchmark ID | Source record ID | Events | Waveforms | Segments |
 |---|---|---:|---:|---:|
 | SW1 | SW2 | 4,632 | 4,632 | 1 |
 | SW2 | SW3 | 15,070 | 15,070 | 4 |
@@ -15,32 +20,42 @@ The canonical prediction target is `rul_observed_events = N - event_index`, usin
 | SW5 | SW7 | 10,101 | 7,768 | 4 |
 | SW6 | EXP-20231108 | 3,199 | 3,199 | 1 |
 | SW7 | EXP-20241205 | 20,172 | 20,172 | 6 |
-| **Total** | | **69,355** | **67,022** | **21** |
 
-The source IDs and segment names are retained as **provenance identifiers**, not as operating-condition measurements. Original legacy SW1 and SW4 peak-only archives were not admitted to the seven-device benchmark. The public SW5 contains 2,333 observations without the full waveform features; those entries have peak voltage and explicit `waveform_available = false`.
+The old identifiers remain in `source_record_id`; acquisition block names remain
+in `source_segment_id`. The publication identifiers therefore change without
+destroying provenance. The discarded legacy SW1 and SW4 peak-only sequences are
+not part of this benchmark.
 
-## Files
+## Layout
 
 ```text
 dataset/
-  processed/event_sequences/SW1.csv ... SW7.csv
-  records.csv
-  id_mapping.csv
-  dataset_manifest.json
-  file_manifest.csv
-  splits/policy.json
-  audit/validation_report.json
-  DATA_CARD.md
-  DATA_DICTIONARY.md
-  raw/source_archives.csv
+├── processed/event_sequences/SW1.csv ... SW7.csv
+├── raw/source_archives.csv
+├── splits/policy.json
+├── audit/validation_report.json
+├── records.csv
+├── id_mapping.csv
+├── file_manifest.csv
+├── dataset_manifest.json
+├── DATA_CARD.md
+└── DATA_DICTIONARY.md
 ```
 
-The `raw/source_archives.csv` file lists historical archive *metadata*; those large raw ZIP archives themselves are **not included**. Full provenance may include archive filenames with embedded terms such as voltages or energies; these filename strings should not be treated as authoritative per-device electrical or optical settings.
+## Evaluation protocol
 
-## Verification and evaluation
+Use leakage-safe leave-one-device-out evaluation. Split complete device records
+before constructing windows. Fit imputation, normalization, feature selection,
+and early stopping only on the six source devices. Test at 20%, 30%, 40%, 50%,
+60%, 70%, and 80% of the held-out record. Report device-macro metrics and every
+held-out device result.
 
-From the repository root, run `python scripts/verify_public_dataset.py`. Evaluate using held-out **whole devices**, fitting preprocessing and model selection on source devices only. See `configs/b016_caro_unified_5seed.yaml` and `docs/REPRODUCIBILITY.md`. Retrospective percentage-of-life checkpoints are endpoint-dependent and should not be presented as deployable online timepoints.
+Rebuild with the configured environment:
 
-## License
+```powershell
+C:\Users\Administrator\anaconda3\envs\myenv\python.exe scripts\build_caro_dataset_benchmark.py
+```
 
-Dataset reuse terms are not yet specified in the supplied materials. The repository MIT software license does not independently grant a dataset license. Confirm the applicable permissions and add explicit dataset terms before public publication. See `docs/DATA_ACCESS.md`.
+The raw ZIP archives are preserved under `private_raw_sources/` and are
+identified by size and SHA-256 hash in `raw/source_archives.csv`. Public
+redistribution has not yet been cleared.

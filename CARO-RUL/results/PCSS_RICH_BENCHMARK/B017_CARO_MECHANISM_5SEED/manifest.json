@@ -1,0 +1,40 @@
+{
+  "run_id": "B017_CARO_MECHANISM_5SEED",
+  "status": "complete",
+  "config": "configs\\pcss_rich_benchmark\\b017_caro_mechanism_5seed.yaml",
+  "config_sha256": "bd97a141df4764abbf6d80abba78de649bbb1b96eb9ef34a39481b432aa8d42c",
+  "dataset_manifest_sha256": "2afff347ea4280f88488d86330b63858e20f1b6aea162918bb0aeeb71d26995a",
+  "device": "cuda",
+  "records": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_targets": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_models": [
+    "caro_no_recency",
+    "caro_no_reliability",
+    "caro_no_trend",
+    "caro_ordered_only"
+  ],
+  "completed": 140,
+  "failed": 0,
+  "input_channels": 43,
+  "leakage_guards": [
+    "record split before windowing",
+    "source-training-prefix-only imputation and scaling",
+    "no target endpoint used for fitting or model selection"
+  ]
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+private_raw_sources/
+provenance/pcss_dataset_v1/
+rerun_results/
+.DS_Store

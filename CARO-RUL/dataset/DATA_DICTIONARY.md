@@ -1,7 +1,7 @@
 # Data dictionary
 
 Each CSV in `processed/event_sequences/` represents one physical device and is
-ordered by `event_index`. All seven files share the same core descriptor columns; SW5 also includes a `sidecar_peak_delta_v` provenance column for acquisition-side peak matching.
+ordered by `event_index`. All seven files share the same columns.
 
 | Column | Type | Unit | Meaning |
 |---|---|---|---|

@@ -10,7 +10,7 @@ across the load resistor.
 
 ## Observations, targets, and independence
 
-- Observation: one retained acquisition record (not an independently verified physical switching operation).
+- Observation: one acquired switching event.
 - Independent unit: one complete device lifetime record.
 - Primary target: the number of later observed events before the terminal event.
 - Canonical order: one-based `event_index`.
@@ -46,5 +46,6 @@ normalization, and endpoint-informed model selection are prohibited.
 - Seven devices remain a small independent sample.
 - Complete operating-condition metadata are unavailable for some dated records.
 - SW5 contains 2,333 events without recoverable full waveforms.
-- Consecutive equal peak readings are retained as distinct acquisition rows; without a synchronized physical-operation counter, their relation to distinct physical pulses cannot be independently verified.
-- Processed event-sequence CSVs are supplied in this release; original waveform archives are not included. Dataset reuse license terms remain to be confirmed by the rightsholders.
+- Consecutive equal peaks are retained because they represent separate switching
+  events under oscilloscope quantization; they are not assumed to be duplicates.
+- The current license does not authorize public redistribution.

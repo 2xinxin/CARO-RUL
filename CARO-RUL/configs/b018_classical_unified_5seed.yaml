@@ -40,6 +40,7 @@ models:
   modern: []
   proposed: []
 runtime:
+  interpreter: C:\Users\Administrator\anaconda3\envs\myenv\python.exe
   device: auto
   resume: true
   output: results/PCSS_RICH_BENCHMARK/B018_CLASSICAL_UNIFIED_5SEED

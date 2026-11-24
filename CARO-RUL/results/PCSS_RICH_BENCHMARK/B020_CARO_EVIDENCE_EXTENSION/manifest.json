@@ -1,0 +1,39 @@
+{
+  "run_id": "B020_CARO_EVIDENCE_EXTENSION",
+  "status": "complete",
+  "device": "cuda",
+  "models": [
+    "tcn",
+    "bilstm",
+    "cdap_point",
+    "tcn_iorh",
+    "caro_rul"
+  ],
+  "targets": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "seeds": [
+    17,
+    29,
+    41,
+    53,
+    67
+  ],
+  "conditions": [
+    "clean",
+    "waveform_dropout_25",
+    "waveform_dropout_50",
+    "recent_missing_16",
+    "plateau_16",
+    "noise_010"
+  ],
+  "completed_training_units": 175,
+  "expected_training_units": 175,
+  "protocol_source": "configs/pcss_rich_benchmark/b016_caro_unified_5seed.yaml"
+}

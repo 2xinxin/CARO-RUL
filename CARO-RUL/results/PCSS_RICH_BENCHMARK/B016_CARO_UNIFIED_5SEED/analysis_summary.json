@@ -1,0 +1,64 @@
+{
+  "integrity": {
+    "expected_metric_rows": 1470,
+    "actual_metric_rows": 1470,
+    "duplicate_metric_keys": 0,
+    "models_complete": true,
+    "targets_complete": true,
+    "seeds_complete": true,
+    "evaluations": [
+      "fixed_event_count",
+      "fractional_life"
+    ],
+    "failed_rows": 0,
+    "pass": true
+  },
+  "best_by_evaluation": {
+    "fixed_event_count": {
+      "model": "rnn",
+      "nmae_mean": 0.5520593611971795,
+      "nrmse_mean": 0.5843518865836491,
+      "r2_mean": -439.8544164428171,
+      "nmae_worst": 1.5133878849342235
+    },
+    "fractional_life": {
+      "model": "caro_rul",
+      "nmae_mean": 0.34446330436402345,
+      "nrmse_mean": 0.38834761674941476,
+      "r2_mean": -5.699508287050079,
+      "nmae_worst": 2.246638436562458
+    }
+  },
+  "caro": [
+    {
+      "evaluation": "fixed_event_count",
+      "family": "proposed",
+      "model": "caro_rul",
+      "device_seed_n": 35,
+      "nmae_mean": 0.5681641501307001,
+      "nmae_sd": 0.3587004442288703,
+      "nmae_worst": 2.2333817673255054,
+      "nrmse_mean": 0.5948601576685296,
+      "r2_mean": -328.83961360232485,
+      "nbias_mean": -0.3220427973455256,
+      "oer_mean": 0.16190476190476188,
+      "parameters": 14117,
+      "latency_ms": 0.6634709516739739
+    },
+    {
+      "evaluation": "fractional_life",
+      "family": "proposed",
+      "model": "caro_rul",
+      "device_seed_n": 35,
+      "nmae_mean": 0.34446330436402345,
+      "nmae_sd": 0.3517083506461159,
+      "nmae_worst": 2.246638436562458,
+      "nrmse_mean": 0.38834761674941476,
+      "r2_mean": -5.699508287050079,
+      "nbias_mean": -0.050044035317208975,
+      "oer_mean": 0.3469387755102041,
+      "parameters": 14117,
+      "latency_ms": 0.6094004089316847
+    }
+  ]
+}

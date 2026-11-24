@@ -1,0 +1,14 @@
+{
+  "expected_metric_rows": 1470,
+  "actual_metric_rows": 1470,
+  "duplicate_metric_keys": 0,
+  "models_complete": true,
+  "targets_complete": true,
+  "seeds_complete": true,
+  "evaluations": [
+    "fixed_event_count",
+    "fractional_life"
+  ],
+  "failed_rows": 0,
+  "pass": true
+}

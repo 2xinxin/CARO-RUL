@@ -1,0 +1,45 @@
+{
+  "run_id": "B018_CLASSICAL_UNIFIED_5SEED",
+  "status": "complete",
+  "config": "configs\\pcss_rich_benchmark\\b018_classical_unified_5seed.yaml",
+  "config_sha256": "7ec1ae90add19df25e34264654def55d2f21897d2367f7751e0d0ec565b68447",
+  "dataset_manifest_sha256": "2afff347ea4280f88488d86330b63858e20f1b6aea162918bb0aeeb71d26995a",
+  "device": "cuda",
+  "records": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_targets": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_models": [
+    "population_median",
+    "population_geomean",
+    "initial_state_ridge",
+    "ridge",
+    "svr",
+    "random_forest",
+    "gradient_boosting",
+    "extra_trees",
+    "wiener"
+  ],
+  "completed": 315,
+  "failed": 0,
+  "input_channels": 43,
+  "leakage_guards": [
+    "record split before windowing",
+    "source-training-prefix-only imputation and scaling",
+    "no target endpoint used for fitting or model selection"
+  ]
+}

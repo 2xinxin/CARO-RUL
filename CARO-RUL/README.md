@@ -1,90 +1,84 @@
-# CARO-RUL
+# CARO-RUL: From Switching Waveforms to Remaining Life
 
-Source code and **processed seven-device benchmark dataset** for *From Switching Waveforms to Remaining Life: Risk-Aware Cross-Device Prognostics of SiC-PCSSs*.
+Version 1.0.0 — repository release candidate for the IEEE Access paper.
 
-CARO-RUL is a compact predictor that combines causal degradation attention pooling (CDAP) and an interval-aware ordered risk head (IORH). The repo includes device-level data, model and baseline implementations, exact main benchmark configurations, preprocessing rules, and scripts for reviewer-requested analyses.
+**Publication gate:** the original `dataset/dataset_manifest.json` and `dataset/DATA_CARD.md` explicitly state that public redistribution is not yet cleared. This locally assembled package contains the processed benchmark and experimental artifacts at the authors' request, but does not grant redistribution rights. Obtain and document authorization for the processed data, predictions and model weights before pushing to a public repository. Software licensing must also be confirmed by the rights holders; third-party licenses remain unchanged. No raw oscilloscope waveform exports or private raw source ZIPs are included. `dataset/raw/source_archives.csv` contains provenance metadata only.
 
-> **Publication scope.** The dataset contains 7 independent SiC-PCSS run-to-breakdown records, **69,355 retained acquisition events**, and **67,022 waveform-backed events**. Each retained row is an **observed acquisition event**, not an independently verified physical switching pulse; there is no synchronized pulse counter covering all files. The original full oscilloscope waveforms are **not** contained here. Trained checkpoints, per-run predictions, and the numerical result archives needed to recreate all published figure/table values are also **not** included in this ZIP. These result artifacts need to be added separately if the repository is intended as a complete manuscript reproduction archive.
+## Layout
 
-## Repository layout
+- `dataset/`: processed SW1–SW7 event sequences (69,355 rows), metadata, feature dictionary, mapping, split policy and original checksums.
+- `src/`, `configs/`, `scripts/`: model implementations, training and evaluation, original B016/B017/B018 configurations and analysis tools.
+- `models/caro_rul_lodo/`: 35 historical trained CARO-RUL checkpoints.
+- `results/PCSS_RICH_BENCHMARK/`: archived B016–B020 metrics, predictions where available, and manifests.
+- `revision_experiments/`: conservative controls (A2-002), nested selection (A2-003), audited baselines (A2-004), diagnostics (A2-005), tables (A2-006), new CPU input ablation (A3-input-ablation), and licensed upstream snapshots.
+- `paper_results/`: final paper's device-level event MAE, quantile diagnostics, all 78 regular at-risk checkpoints, and 105 historical intervention outcomes.
+- `generated/`: created by analysis commands; preserved results are not changed unless noted.
 
-```text
-configs/                          Main and ablation experiment configurations
-dataset/                          Public processed data + manifests + provenance
-  processed/event_sequences/      SW1.csv ... SW7.csv (14 waveform/peak descriptors)
-  records.csv                     Event and waveform counts by device
-  id_mapping.csv                  Acquisition-era to publication ID mapping
-  file_manifest.csv               SHA-256 integrity list
-  DATA_CARD.md                    Dataset provenance and limits
-  DATA_DICTIONARY.md              Column definitions
-docs/                             Data access and reproducibility notes
-examples/                         Synthetic data for lightweight tests
-scripts/revision/                 Reviewer-requested experiments and analyses
-scripts/verify_public_dataset.py  Verify all 7 CSVs and the SHA-256 manifest
-src/                              CARO-RUL model, baselines, evaluation tools
-tests/                            Unit tests
-vendor/                           Instructions for external audited baselines
-```
+## Setup
 
-## Installation
+Run from the `CARO-RUL/` directory. For the original environment use `conda env create -f environment.yml` then `conda activate caro-rul`. The new CPU ablation was run using Python 3.13.5 and PyTorch 2.10.0+cpu; for that environment:
 
 ```bash
-conda env create -f environment.yml
-conda activate caro-rul
-pip install -e .
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-cpu.txt
 ```
 
-Or in an existing Python 3.10+ environment:
+On Windows, activate with `.venv\Scripts\activate` and use PowerShell syntax for environment variables. The external baseline audit uses the included official snapshots; see `revision_experiments/vendor/VERSIONS.md` and their original dependency instructions.
+
+## 1. Verify archived evidence without retraining
 
 ```bash
-pip install -e ".[dev]"
+python scripts/verify_package.py
+python scripts/build_final_paper_evidence.py
+python revision_experiments/summarize_input_ablation.py --output revision_experiments/results/A3-input-ablation
+python scripts/analyze_b016_unified.py
+python scripts/analyze_b020_evidence.py
+python revision_experiments/analyze_revision_evidence.py
+python revision_experiments/build_revision_tables.py
+python scripts/plot_caro_results.py
 ```
 
-## Verify the public release
+Some original analysis commands regenerate derived outputs in the existing results directories; use a working copy when preservation of byte-identical archive files is required. The raw-provenance verification is intentionally incomplete without private originals. The archived metrics are used for the original paper's main comparison; the CPU rerun is a separate matched experiment.
 
-From the repository root:
+## 2. Retrain principal baseline comparisons
+
+Use a separate working copy. The runner resumes by default, so remove/move the matching archived output directory in that copy to force a new training run. For example, before B016 retraining, move `results/PCSS_RICH_BENCHMARK/B016_CARO_UNIFIED_5SEED` to a backup location outside the results tree. Then run:
 
 ```bash
-python scripts/verify_repository.py
-python scripts/verify_public_dataset.py
-pytest -q
+export PYTHONPATH="$PWD/src"
+python -m pcss_rich_benchmark.run_baselines --config configs/b016_caro_unified_5seed.yaml
+python -m pcss_rich_benchmark.run_baselines --config configs/b017_caro_mechanism_5seed.yaml
+python -m pcss_rich_benchmark.run_baselines --config configs/b018_classical_unified_5seed.yaml
 ```
 
-The data integrity tool verifies the seven CSV checksums, one-based event indexes, observed-event RUL targets, waveform counts, and manifest records. The source archives referenced in the provenance metadata are **not** distributed here.
+Move the B017 and B018 result directories too before their respective fresh runs. The frozen configuration files retain historical settings. CUDA is used when available; CPU results are not guaranteed numerically identical. The original B019 merged comparison and B020 stress-test outputs are included for analysis; the original standalone B019 merge and B020 training drivers were not found in the supplied archive. B020 diagnostics can be regenerated from its stored predictions.
 
-Optional synthetic-data pipeline check:
+## 3. Rerun reviewer-requested experiments
 
 ```bash
-python examples/generate_synthetic_dataset.py
-python src/pcss_rich_benchmark/run_baselines.py \
-  --config configs/smoke_test.yaml --model caro_rul --target SW1
+python revision_experiments/run_iorh_controls.py --device auto
+python revision_experiments/run_nested_source_selection.py --device auto
+python revision_experiments/run_baseline_audit.py --device auto
+python revision_experiments/analyze_revision_evidence.py
+python revision_experiments/build_revision_tables.py
 ```
 
-The synthetic test is not a reproduction of the manuscript metrics.
+Use a working copy and preserve the A2-* result folders before rerunning. Some controls use the saved B016 CARO checkpoints; `python scripts/export_caro_models.py` retrains the 35 checkpoints if required. The audited forecasting baselines may need extra dependencies from the upstream source snapshots.
 
-## Main seven-device experiments
-
-The real processed files are already at `dataset/processed/event_sequences/`. No separate installation of the dataset is needed.
+## 4. Reproduce matched input ablation (105 fits)
 
 ```bash
-python src/pcss_rich_benchmark/run_baselines.py \
-  --config configs/b016_caro_unified_5seed.yaml
-python src/pcss_rich_benchmark/run_baselines.py \
-  --config configs/b017_caro_mechanism_5seed.yaml
-python src/pcss_rich_benchmark/run_baselines.py \
-  --config configs/b018_classical_unified_5seed.yaml
+OUT=revision_experiments/results/A3-input-ablation-new
+python revision_experiments/run_input_ablation.py --mode age_only age_missing full --target SW1 --seed 17 --device cpu --threads 2 --output "$OUT"
+python revision_experiments/run_input_ablation.py --mode age_only age_missing full --device cpu --threads 1 --output "$OUT"
+python revision_experiments/summarize_input_ablation.py --output "$OUT"
 ```
 
-These main runs can be computationally substantial. The reviewer-requested conservative controls, nested source-device selection, and baseline audit have separate commands in [Reproducibility](docs/REPRODUCIBILITY.md). The scripts generating consolidated revision tables require experiment result artifacts that are not bundled with this public release.
+Expected archived macro nMAE (retrospective / fixed count): age only 0.4239 / 0.6814; age plus missingness 0.3779 / 0.6713; full 0.3446 / 0.5690. All 105 JSON records are provided, together with 210 fold-schedule metrics and 1,365 predictions. The main historical B016 reference is 0.3445 / 0.5682. Seeds 17, 29, 41, 53, 67; seven device-held-out folds; 128 acquisition window; 14,117 parameters for each input variant.
 
-## Interpreting the dataset
+## Scope and limitations
 
-All samples from each physical device remain in one fold. Source-only imputation/normalization is fitted anew for each held-out target. SW5 includes 2,333 peak-only events: other waveform fields are missing rather than fabricated. The label `rul_observed_events` denotes subsequent **retained** observations until the terminal record and cannot establish the number of physical switching operations missed between acquisitions. Source archive names are file provenance only, not authoritative operating-voltage or laser-energy metadata.
-
-For the data table, original record IDs, column details, and known limits, see [Dataset README](dataset/README.md), [Data card](dataset/DATA_CARD.md) and [Data access](docs/DATA_ACCESS.md).
-
-## Licensing and citation
-
-The original CARO-RUL source code is under the repository's **MIT License**. **No independent license for reuse of the experimental dataset has been selected in the supplied materials**; do not assume the software license automatically covers the experimental records. Dataset rightsholders should add suitable license terms before relying on unrestricted downstream reuse. Third-party baseline source repositories are not vendored and retain their own licenses.
-
-Use `CITATION.cff` until a final bibliographic citation is available.
+RUL is measured in remaining recorded acquisitions, not physical switching cycles or elapsed time. The seven devices are the independent units; seed variation measures optimization variability. Original waveform extraction rules are included, but repeating waveform descriptor extraction or raw-to-processed identity checks requires the nonpublic raw exports. The historical gap-boundary sensitivity result is recorded in the manuscript; its original standalone driver was not found in the archive. Not every historical exploratory run is necessarily preserved. The repository supports rerunning the principal comparisons and direct checks from the included result files, not a claim of bit-for-bit reproduction of every historical experiment.

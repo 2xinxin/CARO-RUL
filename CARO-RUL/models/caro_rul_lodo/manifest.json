@@ -1,0 +1,146 @@
+{
+  "count": 35,
+  "device": "metadata-refresh",
+  "files": [
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW1_seed-17.pt",
+      "sha256": "ebd41d4d01ce135715a3489c9196a5779e73fe4bd21a9ca54c20639d89774af0"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW1_seed-29.pt",
+      "sha256": "6717ce45b916403bf95cc77a6cb7763ba1bcc61f6a20affe2126b5d1970675e4"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW1_seed-41.pt",
+      "sha256": "d95bdfa55ec8d8108bce76c9ba8fefedfb198d14863a9e6b77d4d3971b2a9ab8"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW1_seed-53.pt",
+      "sha256": "d9d7c8de61c6290b3feed5f3a889505ee31c2294e6249e21f9d821fe7ddd6c94"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW1_seed-67.pt",
+      "sha256": "7e448e83d340a4040411798d6dc7315d915e2846945fdceb17e310b3cfee3cc2"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW2_seed-17.pt",
+      "sha256": "78dfeacd3ef91439eb312b6ca6076a0661e6ee214fa94341e23d271364ce68dc"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW2_seed-29.pt",
+      "sha256": "06fee2e28e2cb29fc2b3e10585e2cb69bd7ff7cb071239938a7d5f81bd521d02"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW2_seed-41.pt",
+      "sha256": "659b99e3fd4521a96709cb300446355773a5c8c04064861d769e3bdbcf793af4"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW2_seed-53.pt",
+      "sha256": "5d2cb5cd68a1da47f3baff33192b7a5bfec7437262292fc90f045ba8afe14d1f"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW2_seed-67.pt",
+      "sha256": "047dd1ed515d937a025ca3b69e55f3c883e1d0fab6f95ccf4634193be97f3f4b"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW3_seed-17.pt",
+      "sha256": "d076aa88a2634bebaa3a12ff3aec4b887ee663c0a57397f314384973f8469349"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW3_seed-29.pt",
+      "sha256": "16cc8d2cf46145d95f5bca461a13594be00807d561e07af57128d8188d6cd643"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW3_seed-41.pt",
+      "sha256": "29e50fdf3e69c5d776014a0c41f6f852c7cbaaddd23b1947ba80fb81cbd89a3b"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW3_seed-53.pt",
+      "sha256": "41853fef81a990594b3e500403527d556d21a54d56f0fec39129116277c1dd44"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW3_seed-67.pt",
+      "sha256": "b34c79d020fe6e2b93abe4fc011782db579aede5d1dc9a21a565fbdc6bfaf669"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW4_seed-17.pt",
+      "sha256": "d872017bb447e11a41663b2fcc951d2159772c3dd6e5f4ef404b6ae95a3e0328"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW4_seed-29.pt",
+      "sha256": "417a9323b7c338de40f2d0774782b87a5145ab1b5943d3c6aa3ee1fd251db0f5"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW4_seed-41.pt",
+      "sha256": "075dec2aac2adb39c8b993c307d0000f816cdf0f967ecc25318be2b07fa5a965"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW4_seed-53.pt",
+      "sha256": "a2c63a5f73f74357297630b5530cbbd99dd88e4665d217ecc03f4d5445975d12"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW4_seed-67.pt",
+      "sha256": "7b384d0daa882d980da1822a4b82e35a1d3c312a7ab5b8ab01fa3a5c1e631a07"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW5_seed-17.pt",
+      "sha256": "404282964f3879353bb4132101ba4d53cb1e3959ac9325e4d8f3d3b146bb86b6"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW5_seed-29.pt",
+      "sha256": "d766178a588a41a885fa4169d073d2fb1aec6a47aa24277546e6ab3766cc5182"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW5_seed-41.pt",
+      "sha256": "c2fdbabc18e940197a3bb6d02c80e634bb91f78d6ead293cc3198fa72fb436c1"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW5_seed-53.pt",
+      "sha256": "48f1237fb321ee9445a811c4e94ab288d5256b15b03b7c3d1a56634b7b5c48ba"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW5_seed-67.pt",
+      "sha256": "f3c6acf32b9c980eafcacf7504b0f4fb21337b0e85b92d67347f90bc046b691b"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW6_seed-17.pt",
+      "sha256": "db8b1ea426fb6da1ce5b91dedd5cafd797a0d0f29c1788981962c5e4e0d4c6d7"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW6_seed-29.pt",
+      "sha256": "a9f64700fb0d35e82caaef6715edbdba39a077edeac23b5eb55f2ed392591498"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW6_seed-41.pt",
+      "sha256": "fb67db040b1cd3ddd571180f661827f51138004ef8eb639984ae2ff123a8f6ce"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW6_seed-53.pt",
+      "sha256": "6834549961b7db09456ecab07c87d28673c950f96ff9c0b5d4ea6c00e4d8785e"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW6_seed-67.pt",
+      "sha256": "0227bea465198c6c86f6435548ed7f34e93fa39fabd79a73baaa5d4652aa3c32"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW7_seed-17.pt",
+      "sha256": "bd133c30ee91107400596b20e2cd4a9ff37be734759a80478974f56dea71eaa0"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW7_seed-29.pt",
+      "sha256": "855fd3cb1411a87e9670ac1695dec6fe43cdb44f1ba60759889814eff95de6f4"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW7_seed-41.pt",
+      "sha256": "a848d8130dd00b74e0a9335add63e15dc2550791fc2756ca4ee2d55695da8224"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW7_seed-53.pt",
+      "sha256": "30484ec4d07dcdc4fcd1eb0df8c785eab83a2e3f81ce09b60318c53fd553b3f8"
+    },
+    {
+      "path": "models\\caro_rul_lodo\\caro_rul_target-SW7_seed-67.pt",
+      "sha256": "afda6f97f3fa910652bcfe41ecdf28b9d10fa963c9bf4b48c8bca9ba62001036"
+    }
+  ]
+}

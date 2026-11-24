@@ -1,0 +1,57 @@
+{
+  "run_id": "B016_CARO_UNIFIED_5SEED",
+  "status": "complete",
+  "config": "configs\\pcss_rich_benchmark\\b016_caro_unified_5seed.yaml",
+  "config_sha256": "0b6fb8e030200d087814eafb8543f286991f365db53bdd727a971f6e0ff8f5d8",
+  "dataset_manifest_sha256": "2afff347ea4280f88488d86330b63858e20f1b6aea162918bb0aeeb71d26995a",
+  "device": "cuda",
+  "records": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_targets": [
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "SW6",
+    "SW7"
+  ],
+  "requested_models": [
+    "mlp",
+    "cnn",
+    "rnn",
+    "gru",
+    "lstm",
+    "bilstm",
+    "tcn",
+    "deep_coral_tcn",
+    "groupdro_tcn",
+    "dlinear_faithful",
+    "transformer",
+    "sa_mcd",
+    "informer_faithful",
+    "nbeats_faithful",
+    "patchtst_faithful",
+    "timesnet_faithful",
+    "pathformer_adapted",
+    "sa_mcd_adapted",
+    "cdap_point",
+    "tcn_iorh",
+    "caro_rul"
+  ],
+  "completed": 735,
+  "failed": 0,
+  "input_channels": 43,
+  "leakage_guards": [
+    "record split before windowing",
+    "source-training-prefix-only imputation and scaling",
+    "no target endpoint used for fitting or model selection"
+  ]
+}

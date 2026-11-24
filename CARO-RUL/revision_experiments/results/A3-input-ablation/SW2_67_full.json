@@ -1,0 +1,172 @@
+{
+  "metrics": [
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "parameters": 14117,
+      "epochs": 13,
+      "validation_mae": 0.03360528374711672,
+      "nmae": 0.41112171481065735,
+      "nrmse": 0.4496617317983785,
+      "mae": 6195.193120481796,
+      "rmse": 6775.952636469765,
+      "nbias": -0.41112171481065735,
+      "overestimation_rate": 0.0,
+      "r2": -4.054220993435363
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "parameters": 14117,
+      "epochs": 13,
+      "validation_mae": 0.03360528374711672,
+      "nmae": 0.7430917596132716,
+      "nrmse": 0.7441499190178958,
+      "mae": 11197.649725612391,
+      "rmse": 11213.595129680672,
+      "nbias": -0.7430917596132716,
+      "overestimation_rate": 0.0,
+      "r2": -656.8441462004645
+    }
+  ],
+  "predictions": [
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 3013,
+      "true_rul": 12056.0,
+      "predicted_rul": 2681.863963975814,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 4520,
+      "true_rul": 10549.0,
+      "predicted_rul": 726.2948580243392,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 6027,
+      "true_rul": 9042.0,
+      "predicted_rul": 1382.2520294340143,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 7534,
+      "true_rul": 7535.0,
+      "predicted_rul": 1521.0216907635188,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 9041,
+      "true_rul": 6028.0,
+      "predicted_rul": 692.2752452947557,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 10548,
+      "true_rul": 4521.0,
+      "predicted_rul": 1487.0782579394472,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fractional_life",
+      "index": 12055,
+      "true_rul": 3014.0,
+      "predicted_rul": 887.8621111955472,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 256,
+      "true_rul": 14813.0,
+      "predicted_rul": 2911.111632773793,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 512,
+      "true_rul": 14557.0,
+      "predicted_rul": 2826.1682440264685,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 768,
+      "true_rul": 14301.0,
+      "predicted_rul": 2756.5681711163597,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 1024,
+      "true_rul": 14045.0,
+      "predicted_rul": 3319.306249094898,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 1280,
+      "true_rul": 13789.0,
+      "predicted_rul": 2698.944831862355,
+      "lifetime": 15069
+    },
+    {
+      "target": "SW2",
+      "seed": 67,
+      "mode": "full",
+      "evaluation": "fixed_event_count",
+      "index": 1536,
+      "true_rul": 13533.0,
+      "predicted_rul": 3340.0025174517928,
+      "lifetime": 15069
+    }
+  ],
+  "torch_version": "2.10.0+cpu",
+  "device": "cpu",
+  "threads": 1,
+  "seconds": 5.021089990000007
+}

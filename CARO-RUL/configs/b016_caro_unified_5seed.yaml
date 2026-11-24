@@ -44,6 +44,7 @@ models:
            pathformer_adapted, sa_mcd_adapted]
   proposed: [cdap_point, tcn_iorh, caro_rul]
 runtime:
+  interpreter: C:\Users\Administrator\anaconda3\envs\myenv\python.exe
   device: auto
   resume: true
   output: results/PCSS_RICH_BENCHMARK/B016_CARO_UNIFIED_5SEED
